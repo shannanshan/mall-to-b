@@ -73,6 +73,7 @@ export default {
             .login(this.loginForm)
             .then((res) => {
               console.log(res);
+              this.$store.dispath('setUserInfo', res);
               this.$router.push({
                 name: 'Home',
               });
