@@ -17,7 +17,7 @@
     </div>
     <ul class="user-info">
       <li>
-        欢迎shannanshan
+        {{$store.state.user.username}}
         <a-icon type="down" />
       </li>
       <li>退出</li>
