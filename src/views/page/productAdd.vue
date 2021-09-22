@@ -1,3 +1,3 @@
 <template>
-  <div class="product-add-container">添加商品</div>
+    <div>新增商品</div>
 </template>

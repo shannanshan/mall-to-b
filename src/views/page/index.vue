@@ -1,3 +1,3 @@
 <template>
-  <div class="index-container">统计页面</div>
+    <div>统计</div>
 </template>

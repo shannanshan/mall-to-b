@@ -1,3 +1,3 @@
 <template>
-  <div class="category-container">商品类目</div>
+    <div>类目管理</div>
 </template>
