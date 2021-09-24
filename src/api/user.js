@@ -1,4 +1,4 @@
-// 用户操作的接口管理
+// 对于用户操作的接口管理
 import axios from '@/axios';
 
 export default {

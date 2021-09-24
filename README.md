@@ -1,4 +1,4 @@
-# mall-to-b
+# mall-admin-app
 
 ## Project setup
 ```

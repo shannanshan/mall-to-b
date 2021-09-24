@@ -1,12 +1,11 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import store from '@/store';
+import getMenuRoutes from '@/utils/permission';
 import Home from '../views/layout/Home.vue';
 import Login from '../views/layout/Login.vue';
-import getMenuRoutes from '@/utils/permission';
 
 Vue.use(VueRouter);
-
 const ayncRouterMap = [{
   path: '/product',
   name: 'Product',
@@ -35,6 +34,15 @@ const ayncRouterMap = [{
     },
     component: () => import('@/views/page/productAdd.vue'),
   }, {
+    path: 'edit/:id',
+    name: 'ProductEdit',
+    meta: {
+      title: '编辑商品',
+      icon: 'file-add',
+      hidden: true,
+    },
+    component: () => import('@/views/page/productAdd.vue'),
+  }, {
     path: 'category',
     name: 'Category',
     meta: {
@@ -51,9 +59,9 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home,
+    redirect: '/index',
     meta: {
       title: '首页',
-      redirect: '/index',
       hidden: false,
       icon: 'home',
     },
@@ -82,14 +90,12 @@ const routes = [
 const router = new VueRouter({
   routes,
 });
-
 let isAddRoutes = false;
 router.beforeEach((to, from, next) => {
   if (to.path !== '/login') {
     if (store.state.user.appkey && store.state.user.username && store.state.user.role) {
       if (!isAddRoutes) {
         const menuRoutes = getMenuRoutes(store.state.user.role, ayncRouterMap);
-        router.addRoutes(menuRoutes);
         store.dispatch('changeMenuRoutes', routes.concat(menuRoutes)).then(() => {
           router.addRoutes(menuRoutes);
           next();
@@ -102,5 +108,4 @@ router.beforeEach((to, from, next) => {
   }
   return next();
 });
-
 export default router;

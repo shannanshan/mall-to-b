@@ -1,8 +1,8 @@
 <template>
     <div class="index">
-        <Card />
+        <card />
 
-        <Charts />
+        <charts />
     </div>
 </template>
 

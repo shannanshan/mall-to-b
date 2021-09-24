@@ -6,7 +6,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    // 导航的收放状态  false为展开  true为收起
+    // 导航的收放状态 false为展开  true为收起来
     collapsed: false,
     // 用户信息
     user: getUserCookie(),

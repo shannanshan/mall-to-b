@@ -1,10 +1,6 @@
 <template>
-  <div class="home-right-header">
-    <a-button
-      type="primary"
-      style="margin-bottom: 16px"
-      @click="toggleCollapsed"
-    >
+  <div class="silder-nav">
+    <a-button type="primary" @click="toggleCollapsed">
       <a-icon :type="$store.state.collapsed ? 'menu-unfold' : 'menu-fold'" />
     </a-button>
     <div class="breadcrumb">
@@ -26,7 +22,6 @@
     </ul>
   </div>
 </template>
-
 <script>
 export default {
   data() {
@@ -52,6 +47,10 @@ export default {
   },
 };
 </script>
-
-<style>
+<style lang="less">
+  .user-info {
+    position: fixed;
+    right: 0;
+    top: 0;
+  }
 </style>
